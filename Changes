@@ -6,8 +6,13 @@ List of significant changes to Data::Tumbler
 
 =cut
 
+=head2 Changes in Data::Tumbler 0.002 - 15th March 2014
+
+  Remove Class::Tiny
+  Add TODO and .travis.yml
+
 =head2 Changes in Data::Tumbler 0.001 - 15th March 2014
 
-  Initial release base on work in https://github.com/perl5-dbi/DBI-Test
+  Initial release based on work in https://github.com/perl5-dbi/DBI-Test
 
 =cut

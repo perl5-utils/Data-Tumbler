@@ -93,13 +93,47 @@ the existing context and the new value. The default is shown in the example abov
 use Storable qw(dclone);
 use Carp qw(confess);
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
-use Class::Tiny {
-    consumer  => sub { confess "No Data::Tumbler consumer defined" },
-    add_path    => sub { sub { my ($path,    $name ) = @_; return [ @$path,    $name  ] }},
-    add_context => sub { sub { my ($context, $value) = @_; return [ @$context, $value ] }},
-};
+
+sub new {
+    my ($class, %args) = @_;
+
+    my %defaults = (
+        consumer    => sub { confess "No Data::Tumbler consumer defined" },
+        add_path    => sub { my ($path,    $name ) = @_; return [ @$path,    $name  ] },
+        add_context => sub { my ($context, $value) = @_; return [ @$context, $value ] },
+    );
+    my $self = bless \%defaults => $class;
+
+    for my $attribute (qw(consumer add_path add_context)) {
+        next unless exists $args{$attribute};
+        $self->$attribute(delete $args{$attribute});
+    }
+    confess "Unknown $class arguments: @{[ keys %args ]}"
+        if %args;
+
+    return $self;
+}
+
+
+sub consumer {
+    my $self = shift;
+    $self->{consumer} = shift if @_;
+    return $self->{consumer};
+}
+
+sub add_path {
+    my $self = shift;
+    $self->{add_path} = shift if @_;
+    return $self->{add_path};
+}
+
+sub add_context {
+    my $self = shift;
+    $self->{add_context} = shift if @_;
+    return $self->{add_context};
+}
 
 
 sub tumble {
