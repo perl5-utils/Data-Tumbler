@@ -18,8 +18,8 @@ Data::Tumbler - Dynamic generation of nested combinations
 
     $tumbler->tumble(
         [   # provider code refs
-            sub { (foo => 42, bar => 24, baz => 19) },
-            sub { (ping => 1, pong => 2) },
+            sub { (red => 42, green => 24, blue => 19) },
+            sub { (circle => 1, square => 2) },
             # ...
         ],
         [], # names
@@ -29,12 +29,12 @@ Data::Tumbler - Dynamic generation of nested combinations
 
 Outputs:
 
-    bar ping: 24 1
-    bar pong: 24 2
-    baz ping: 19 1
-    baz pong: 19 2
-    foo ping: 42 1
-    foo pong: 42 2
+    green circle: 24 1
+    green square: 24 2
+    blue circle: 19 1
+    blue square: 19 2
+    red circle: 42 1
+    red square: 42 2
 
 =head1 DESCRIPTION
 
@@ -63,6 +63,8 @@ by providers are only visible within the scope of the generated sub-tree.
 Note that although the example above shows the path, context and payload as
 array references, the tumbler code makes no assumptions about them. They can be
 any kinds of values.
+
+See L<Test::WriteVariants> for a practical example use.
 
 =head1 ATTRIBUTES
 
@@ -93,7 +95,7 @@ the existing context and the new value. The default is shown in the example abov
 use Storable qw(dclone);
 use Carp qw(confess);
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 
 sub new {

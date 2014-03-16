@@ -8,7 +8,9 @@ my $mymeta_works = eval { ExtUtils::MakeMaker->VERSION('6.5707'); 1 };
 my $mymeta = $mymeta_works || eval { ExtUtils::MakeMaker->VERSION('6.5702'); 1 };
 
 my %BUILD_DEPS = (
-  'Test::More' => '0.88',
+    'Test::More' => '0.88',
+    'Test::Most' => '0.33',
+    'Storable' => '0',
 );
 
 my %RUN_DEPS = (
