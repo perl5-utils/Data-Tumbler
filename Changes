@@ -1,27 +1,15 @@
-=head1 NAME
+Revision history for Perl module Data::Tumbler
 
-List of significant changes to Data::Tumbler
+0.004	2014-03-22
+    - Improve the docs with a more detailed example.
 
-=encoding ISO8859-1
+0.003	2014-03-16
+    - Added dependency on Test::Most.
+    - Tweak the example in the docs.
 
-=cut
+0.002	2014-03-15
+    - Remove Class::Tiny
+    - Add TODO and .travis.yml
 
-=head2 Changes in Data::Tumbler 0.004 - 22nd March 2014
-
-  Improve the docs with a more detailed example.
-
-=head2 Changes in Data::Tumbler 0.003 - 16th March 2014
-
-  Added dependency on Test::Most.
-  Tweak the example in the docs.
-
-=head2 Changes in Data::Tumbler 0.002 - 15th March 2014
-
-  Remove Class::Tiny
-  Add TODO and .travis.yml
-
-=head2 Changes in Data::Tumbler 0.001 - 15th March 2014
-
-  Initial release based on work in https://github.com/perl5-dbi/DBI-Test
-
-=cut
+0.001	2014-03-15
+    - Initial release based on work in https://github.com/perl5-dbi/DBI-Test
