@@ -179,6 +179,13 @@ use Carp qw(confess);
 
 our $VERSION = '0.005';
 
+=head1 METHODS
+
+=head2 new
+
+Contructs new Data::Tumbler, deals with initial values for L</ATTRIBUTES>.
+
+=cut
 
 sub new {
     my ($class, %args) = @_;
@@ -219,6 +226,11 @@ sub add_context {
     return $self->{add_context};
 }
 
+=head2 tumble
+
+Tumbles providers to compute variants.
+
+=cut
 
 sub tumble {
     my ($self, $providers, $path, $context, $payload) = @_;
