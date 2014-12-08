@@ -1,5 +1,16 @@
 Revision history for Perl module Data::Tumbler
 
+0.006	2014-12-08
+    - Improve Kwalitee
+    - deploy correct licenses
+    - rewrite Changes aacording to CPAN::Changes::Spec
+    - add rough documentation in Pod (based on Tim's source comments)
+
+0.005	2014-03-25
+    - Rename README.md to README
+    - Tweak MANIFEST.SKIP
+    - Add LICENCE
+
 0.004	2014-03-22
     - Improve the docs with a more detailed example.
 
