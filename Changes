@@ -1,5 +1,8 @@
 Revision history for Perl module Data::Tumbler
 
+0.008	2014-12-26
+    - reflect rt#100805 recommendation in LICENSE
+
 0.007	2014-12-12
     - add GPL-1 license text as it's fulfilling basic requirements
 
