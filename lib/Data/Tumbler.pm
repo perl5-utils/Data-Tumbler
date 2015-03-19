@@ -177,7 +177,7 @@ the existing context and the new value. The default is shown in the example abov
 use Storable qw(dclone);
 use Carp qw(confess);
 
-our $VERSION = '0.009';
+our $VERSION = '0.009_001';
 
 =head1 METHODS
 
