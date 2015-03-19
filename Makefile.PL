@@ -54,22 +54,20 @@ WriteMakefile1(
             build   => { requires => {%BUILD_DEPS} },
             test    => { requires => {%TEST_DEPS} },
             runtime => {
-                requires => {
-                    %RUN_DEPS,
-                },
+                requires => { %RUN_DEPS, },
             },
         },
     },
-    NAME           => 'Data::Tumbler',
-    VERSION_FROM   => 'lib/Data/Tumbler.pm',
-    ABSTRACT_FROM  => 'lib/Data/Tumbler.pm',
-    AUTHOR         => 'Tim Bunce',
-    LICENSE        => 'perl',
+    NAME               => 'Data::Tumbler',
+    VERSION_FROM       => 'lib/Data/Tumbler.pm',
+    ABSTRACT_FROM      => 'lib/Data/Tumbler.pm',
+    AUTHOR             => 'Tim Bunce',
+    LICENSE            => 'perl',
     CONFIGURE_REQUIRES => \%CONFIGURE_DEPS,
-    PREREQ_PM      => \%RUN_DEPS,
-    BUILD_REQUIRES => \%BUILD_DEPS,
-    TEST_REQUIRES  => \%TEST_DEPS,
-    test           => { TESTS => 't/*.t xt/*.t' },
+    PREREQ_PM          => \%RUN_DEPS,
+    BUILD_REQUIRES     => \%BUILD_DEPS,
+    TEST_REQUIRES      => \%TEST_DEPS,
+    test               => { TESTS => 't/*.t xt/*.t' },
 );
 
 sub WriteMakefile1
