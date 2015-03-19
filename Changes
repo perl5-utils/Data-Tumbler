@@ -1,5 +1,9 @@
 Revision history for Perl module Data::Tumbler
 
+0.009_001	2015-03-19
+    - relax minimum perl to 5.6 since it runs fine in LMU on 5.6
+    - add POD sections for author, support, copyright, ...
+
 0.008	2014-12-26
     - reflect rt#100805 recommendation in LICENSE
 
