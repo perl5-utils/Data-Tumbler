@@ -14,9 +14,12 @@ my %CONFIGURE_DEPS = (
 my %BUILD_DEPS = ();
 
 my %TEST_DEPS = (
+    'List::Util' => 0,
     'Test::More' => '0.88',
     'Test::Most' => '0.33',
+    'Time::HiRes' => 0,
 );
+$] < 5.008 and $TEST_DEPS{'IO::String'} = 0;
 
 WriteMakefile1(
     MIN_PERL_VERSION => '5.006',

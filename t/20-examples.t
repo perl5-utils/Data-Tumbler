@@ -8,8 +8,19 @@ use Data::Tumbler;
 my @output;
 my $tumbler;
 
-open my $fh, '>', \my $buffer
-    or die "Can't reopen STDOUT to a variable: $!";
+my $buffer = "";
+my $fh;
+
+if ( $] < 5.008 )
+{
+    require IO::String;
+    $fh = IO::String->new($buffer);
+}
+else
+{
+    open $fh, '>', \$buffer
+	or die "Can't reopen STDOUT to a variable: $!";
+}
 select $fh;
 
 note "Example 1";
@@ -56,8 +67,15 @@ red square: 42 2
 
 
 $buffer = "";
-open $fh, '>', \$buffer
-    or die "Can't reopen STDOUT to a variable: $!";
+if ( $] < 5.008 )
+{
+    $fh = IO::String->new($buffer);
+}
+else
+{
+    open $fh, '>', \$buffer
+	or die "Can't reopen STDOUT to a variable: $!";
+}
 select $fh;
 
 note "Example 2";
