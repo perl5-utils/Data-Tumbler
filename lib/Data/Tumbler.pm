@@ -177,7 +177,7 @@ the existing context and the new value. The default is shown in the example abov
 use Storable qw(dclone);
 use Carp qw(confess);
 
-our $VERSION = '0.009_001';
+our $VERSION = '0.009_002';
 
 =head1 METHODS
 
@@ -318,7 +318,7 @@ Tim Bunce, C<< <timb at cpan.org> >>
 This module has been created to support DBI::Test in design and separation
 of concerns.
 
-=head1 LICENSE AND COPYRIGHT
+=head1 COPYRIGHT
 
 Copyright 2014-2015 Tim Bunce and Perl5 DBI Team.
 
